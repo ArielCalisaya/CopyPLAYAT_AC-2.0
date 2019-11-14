@@ -2,13 +2,10 @@ import React, { Fragment } from "react";
 import FieldCard from "../components/FieldCard";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
- 
+
 
 
 export default class FieldsView extends React.Component {
-    constructor() {
-        super();
-    }
 
     render() {
         return (
@@ -22,7 +19,7 @@ export default class FieldsView extends React.Component {
                         <div className="col-md-4 my-background">
                         <div class="dropdown">
                                 <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="no-style">
-                                    <img src="img/orlando.png" alt="menu" className="img-fluid" />
+                                    <img src="img/SVG/orlando.png" alt="menu" className="img-fluid" />
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <Link class="dropdown-item" to="/">Logout</Link>
@@ -82,7 +79,7 @@ export default class FieldsView extends React.Component {
                         </div>
                         <div className="col-md-8 my-background">
                             <div className="container padding-for-container">
-                                {store.admin_field_car.map((item,index) => {return(<FieldCard />);})}
+                                {store.admin_field_card.map((item,index) => {return(<FieldCard />);})}
                             </div>
                         </div>
                     </div>

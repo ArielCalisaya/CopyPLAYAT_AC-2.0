@@ -2,17 +2,14 @@ import React from 'react';
 import {Context} from "../store/appContext";
 
 class Registro extends React.Component{
-  constructor(props){
-    super(props)
-  }
-  
+
   render(){
     return(
       <div className="container-register">
         <Context.Consumer>
           {
             ({store,actions}) => {return(
-        <form onSubmit={(e)=> actions.handleSubmit(e)} className="register-form form-register">
+        <form onSubmit={(e)=> actions.handleSubmit(e)} className="register-form">
           <h1 className="tittle">Sign Up</h1>
           <div className="input-container-register">
           <input
@@ -50,6 +47,7 @@ class Registro extends React.Component{
           </Context.Consumer>
       </div>
       //DEBUG: En google api button uncaught TypeError: Cannot read property 'style' of null
+      // item google sign in no usado
       // msg: de consola html
       // TERMINAR: Vista de imagen para Sabado
     )

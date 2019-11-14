@@ -43,7 +43,7 @@ form.my-padding{
   .btn-register:hover{
     opacity: 1;
   }
- 
+
   .my-padding-top{
     padding-top: 20px;
   }
@@ -68,7 +68,7 @@ form.my-padding{
   .my-background{
     background: white;
   }
-  
+
   h5.text-center{
     padding-top: 40px;
     padding-bottom: 20px;
@@ -126,9 +126,9 @@ form.my-padding{
       width: 50% !important;
       margin: auto;
     }
-   
+
     td{
-      border-top: none !important; 
+      border-top: none !important;
     }
 
 /*----CSS ARIEL------ */
@@ -606,7 +606,6 @@ body{
 
 .contact-btn {
   border: none;
-
   display: inline-block;
   padding: 2px;
   color: black;
@@ -618,11 +617,13 @@ body{
 }
 .contact-btn {
   background: linear-gradient(#FFDA63, #FFB940);
+  text-decoration: none;
   opacity: 0.8;
-
 }
 .contact-btn:hover {
-		opacity: 1;
+    text-decoration: none;
+	opacity: 1;
+    color: black;
 }
 
 

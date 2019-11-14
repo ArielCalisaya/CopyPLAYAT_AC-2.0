@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-select/dist/css/bootstrap-select.min.css";
 
+
 //import your own components
 
 import Layout from "./layout";

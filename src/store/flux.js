@@ -1,15 +1,24 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      admin_field_card: [],
       userfile: {
-        username: "",
-        password: "",
-        e_mail: "",
-        firstname: "",
-        lastname: "",
-        gender: ""
+          username:'',
+          password:'',
+          firstname:'',
+          lastname:'',
+          email:'',
+          gender:'',
+
+          deporte: 'Fútbol y baloncesto',
+          carrera: 'Pro Trainer Fitnes',
+          phone_number: '+56 12345678',
+
+          twitter: 'http://www.twitter.com/user',
+          instagram: 'http://www.instagram.com/user',
+          facebook: 'https://www.facebook.com/user',
       },
+      admin_field_card: [],
+
       sport_field_data:{
         opsOfServicesSelected: [],
         title:"",
@@ -60,6 +69,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ sport_field_data });
         e.preventDefault();
       },
+
+
       handleSubmit(e){
         const store = getStore();
         e.preventDefault();
@@ -84,12 +95,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         });
       },
+
       editAdminCard(e,index){
         const store = getStore();
         let { admin_field_card } = store;
-        console.log(admin_field_card[index])
         setStore({sport_field_data: admin_field_card[index]})
         e.preventDefault();
+        console.log(admin_field_card[index])
+
        },
       deleteAdminCard(e,index){
        const store = getStore();
@@ -115,7 +128,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
         const {sport_field_data} = store;
         let {options} = e.target;
-        let value = ""
+        // let value = ""
         for (var i = 0; i < options.length; i++) {
           if (options[i].selected) {
             sport_field_data[e.target.name] = options[i].value ;

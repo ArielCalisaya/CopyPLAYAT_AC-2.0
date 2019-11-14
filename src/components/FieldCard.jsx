@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 
 const FieldCard = (props) => {
     return (
+        <Fragment>
         <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-md-4">
@@ -21,6 +22,7 @@ const FieldCard = (props) => {
                 </div>
             </div>
         </div>
+        </Fragment>
     );
 }
 
