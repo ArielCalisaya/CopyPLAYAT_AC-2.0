@@ -1,10 +1,15 @@
 import React, { Fragment } from "react";
+import {Context} from '../store/appContext';
 
 
 const Descriptions = () => {
     return (
-        <Fragment>
-            <h5 style={{ paddingTop: "40px", paddingBottom: "20px" }}>Descripción</h5>
+        <Context.Consumer>
+        {
+            ({ store, actions }) => {
+                return(
+                    <Fragment>
+                <h5 style={{ paddingTop: "40px", paddingBottom: "20px" }}>Descripción</h5>
             <table class="table">
                 <thead>
                     <tr>
@@ -35,7 +40,11 @@ const Descriptions = () => {
                     </tr>
                 </tbody>
             </table>
-        </Fragment>
+            </Fragment>
+                )
+            }
+        }
+            </Context.Consumer>
     );
 }
 

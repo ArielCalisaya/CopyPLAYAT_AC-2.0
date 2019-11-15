@@ -17,7 +17,52 @@ const getState = ({ getStore, getActions, setStore }) => {
           instagram: 'http://www.instagram.com/user',
           facebook: 'https://www.facebook.com/user',
       },
-      admin_field_card: [],
+      admin_field_card: [
+          {
+              id: 0,
+              opsOfServicesSelected: ["Cafeteria", "Quincho"],
+              title:"Padre Hurtado",
+              price:"10.000",
+              playersCapacity:"10",
+              schedule: "8:30",
+              address:"Recoleta, Dominicos",
+              typeOfSoil:"Cesped sintetico",
+              typeOfSport:"Tennis"
+          },
+          {
+              id: 1,
+              opsOfServicesSelected: ["Baño", "Cafeteria", "Quincho"],
+              title:"7 Canchas",
+              price:"15.000",
+              playersCapacity:"15",
+              schedule: "8:30 a 18:30",
+              address:"Huechuraba, av.Recoleta",
+              typeOfSoil:"Cesped sintetico",
+              typeOfSport:"Futbol"
+          },
+          {
+              id: 2,
+              opsOfServicesSelected: ["Cafeteria", "Quincho"],
+              title:"Parque, O'Higgins",
+              price:"20.000",
+              playersCapacity:"14",
+              schedule: "8:30 a 20:30",
+              address:"Recoleta, Dominicos",
+              typeOfSoil:"Cesped Humedo",
+              typeOfSport:"Futbol"
+          },
+          {
+              id: 2,
+              opsOfServicesSelected: ["Baño", "Cafeteria", "Quincho"],
+              title:"Gimnasio U. Chile",
+              price:"25.000",
+              playersCapacity:"12",
+              schedule: "8:30 a 18:30",
+              address:"Maipu, Reyes Bravo",
+              typeOfSoil:"Cesped Humedo",
+              typeOfSport:"Futbol, Basketball"
+          },
+      ],
 
       sport_field_data:{
         opsOfServicesSelected: [],

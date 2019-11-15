@@ -3,10 +3,7 @@ import FieldCard from "../components/FieldCard";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-
-
 export default class FieldsView extends React.Component {
-
     render() {
         return (
             <Fragment>
@@ -17,69 +14,71 @@ export default class FieldsView extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4 my-background">
-                        <div class="dropdown">
+                        <div className="dropdown">
                                 <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="no-style">
                                     <img src="img/SVG/orlando.png" alt="menu" className="img-fluid" />
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <Link class="dropdown-item" to="/">Logout</Link>
-                                    <Link class="dropdown-item" to="/user">Profile</Link>
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <Link className="dropdown-item" to="/">Logout</Link>
+                                    <Link className="dropdown-item" to="/user">Profile</Link>
                                 </div>
                             </div>
                             <h5 className="text-center">Preferences</h5>
                             <form>
                                 <div className="form-group">
-                                    <label for="select1">Type of game</label>
-                                    <select class="form-control" id="select1">
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
+                                    <label htmlFor="select1">Tipo de Deporte</label>
+                                    <select className="form-control" id="select1">
+                                        <option value="Futbol">Fútbol</option>
+                                        <option value="Basketball">Basketball</option>
+                                        <option value="Baseball">Baseball</option>
+                                        <option value="Tennis">Tennis</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label for="select1">Type of soil</label>
-                                    <select class="form-control" id="select1">
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
+                                    <label htmlFor="select1">Tipo de Pavimento</label>
+                                    <select className="form-control" id="select1">
+                                        <option value="Cemento">Cemento</option>
+                                        <option value="Cesped sintetico">Cesped sintetico</option>
+                                        <option value="Cesped natural">Cesped natural</option>
+                                        <option value="Madera">Madera</option>
+                                        <option value="Vinilo">Vinilo</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label for="select1">Field size</label>
-                                    <select class="form-control" id="select1">
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <label for="select1">Capacity</label>
-                                    <select class="form-control" id="select1">
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
-                                        <option>Default select</option>
+                                    <label htmlFor="select1">Capacidad</label>
+                                    <select className="form-control" id="select1">
+                                        <option>2 persona</option>
+                                        <option>4 personas</option>
+                                        <option>10 personas</option>
+                                        <option>20 personas</option>
                                     </select>
                                 </div>
                                 <div className="text-center">
-                                    <button type="submit" class="btn-register-card">Filter</button>
+                                    <button type="submit" className="btn-register-card">Filter</button>
                                 </div>
                             </form>
                         </div>
                         <div className="col-md-8 my-background">
                             <div className="container padding-for-container">
-                                {store.admin_field_card.map((item,index) => {return(<FieldCard />);})}
+
+                            <div className="overflowField">
+                                {store.admin_field_card.map((item,index) => {
+                                    return(
+                                        <FieldCard key={index}
+                                        title={item.title}
+        								schedule={item.schedule}
+        								opsOfServicesSelected={item.opsOfServicesSelected}
+        								playersCapacity={item.playersCapacity + " Personas Max" }
+        								address= {item.address}
+        								typeOfSoil={item.typeOfSoil}
+        								typeOfSport={item.typeOfSport}
+        								price={item.price + " CLP"}
+
+                                        />
+                                    )}
+                                )
+                            }
+                            </div>
                             </div>
                         </div>
                     </div>
