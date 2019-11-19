@@ -62,17 +62,19 @@ export default class FieldsView extends React.Component {
                             <div className="container padding-for-container">
 
                             <div className="overflowField">
-                                {store.admin_field_card.map((item,index) => {
+                                {store.admin_field_card.map((item) => {
                                     return(
-                                        <FieldCard key={index}
+                                        <FieldCard
+                                        key={item.id}
                                         title={item.title}
         								schedule={item.schedule}
         								opsOfServicesSelected={item.opsOfServicesSelected}
-        								playersCapacity={item.playersCapacity + " Personas Max" }
+        								playersCapacity={item.playersCapacity}
         								address= {item.address}
         								typeOfSoil={item.typeOfSoil}
         								typeOfSport={item.typeOfSport}
         								price={item.price + " CLP"}
+                                        description={item.description}
 
                                         />
                                     )}

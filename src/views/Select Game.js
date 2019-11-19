@@ -11,6 +11,7 @@ class SelectGame extends React.Component{
           <div className="col-sm-6 text-center">
           <figure className="game">
            <img className='img-selectGame' id='Football' alt="Football" style={shortcut} src='img/Football.png'/>
+           <a href="/fields" style={{ color:"white" }}>
           <div className="title-selectgame-only"
           style={alignInitial}>
             <div>
@@ -18,15 +19,16 @@ class SelectGame extends React.Component{
               <h5>Canchas, y mas...</h5>
             </div>
           </div>
+          </a>
           <figcaption>
             <p>Juega fútbol con equipos de hasta 11 jugadores, y desempeña tu espiritu en la cancha</p>
           </figcaption>
-
         </figure>
         </div>
         <div className="col-sm-6 text-center">
         <figure className="game">
           <img className='img-selectGame tennis-w' id='Tennis' alt="Tennis" style={shortcut} src='img/tennisball.png'/>
+          <a href="/fields" style={{ color:"white" }}>
           <div className="title-selectgame-only"
           style={alignInitial}>
             <div>
@@ -34,6 +36,7 @@ class SelectGame extends React.Component{
               <h5>Canchas amplias y mas!!!</h5>
             </div>
           </div>
+          </a>
           <figcaption>
             <p>Juega individualmente, o en equipos compuestos por 2 personas, con campos amplios y moderados, <br/>¿listo para empezar?</p>
           </figcaption>
@@ -43,6 +46,7 @@ class SelectGame extends React.Component{
         <div className="col-sm-6 text-center">
         <figure className="game">
           <img className='img-selectGame' id='Basketball' alt="Basketball" style={shortcut} src='img/basketball.png'/>
+          <a href="/fields" style={{ color:"white" }}>
           <div className="title-selectgame-only"
           style={alignInitial}>
             <div>
@@ -50,6 +54,7 @@ class SelectGame extends React.Component{
               <h5>unete a una cancha</h5>
             </div>
           </div>
+          </a>
           <figcaption>
             <p>Compone un equipo y juega en una variedad de canchas con diversos tamaños, que esperas, juegue!!!</p>
           </figcaption>
@@ -60,6 +65,7 @@ class SelectGame extends React.Component{
         <div className="col-sm-6 text-center">
         <figure className="game">
           <img className='img-selectGame' id='Baseball' alt="Baseball" style={shortcut} src='img/baseball.png'/>
+          <a href="/fields" style={{ color:"white" }}>
           <div className="title-selectgame-only"
           style={alignInitial}>
             <div>
@@ -67,6 +73,7 @@ class SelectGame extends React.Component{
               <h5>variedad de campos</h5>
             </div>
           </div>
+          </a>
           <figcaption>
             <p>¡Golpea la pelota y marca un home run!<br/> Desde campos con cesped hasta, suelos planos </p>
           </figcaption>

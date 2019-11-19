@@ -42,12 +42,7 @@ class Footer extends React.Component {
     		<span>About the company</span> PlayAt es una aplicacion para facilitar la Busqueda de canchas y campos de juego de diversos deportes, creado por: <br/><strong>Orlando Monroy y Ariel Calisaya.</strong> <br/>Full Stack developers.
     		</p>
 
-    		<div className="footer-icons">
-    		<a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></a>
-    		<a href="http://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a>
-    		<a href="http://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin"></i></a>
-    		<a href="http://github.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-github"></i></a>
-    		</div>
+
     		</div>
     		</footer>
         );

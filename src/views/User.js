@@ -47,9 +47,9 @@ class User extends React.Component {
                         <p className="phone-number">Phone: +56 9 123 456 78</p>
 
                         <div className="icons" style={iconsize}>
-                          <a id="icon-contact" href={store.userfile.twitter}><i className="fa fa-twitter"></i></a>
-                          <a id="icon-contact" href={store.userfile.instagram}><i className="fa fa-instagram"></i></a>
-                          <a id="icon-contact" href={store.userfile.facebook}><i className="fa fa-facebook"></i></a>
+                          <a id="icon-contact" href={store.userfile.twitter}><i className="fab fa-twitter"></i></a>
+                          <a id="icon-contact" href={store.userfile.instagram}><i className="fab fa-instagram"></i></a>
+                          <a id="icon-contact" href={store.userfile.facebook}><i className="fab fa-facebook"></i></a>
                         </div>
                         <p><a className="contact-btn" href="/user/edit">Editar</a></p>
                       </div>

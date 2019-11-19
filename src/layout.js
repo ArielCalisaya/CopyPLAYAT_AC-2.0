@@ -35,3 +35,5 @@ function Layout() {
 }
 
 export default injectContext(Layout);
+
+// TODO: Field añadir ruta para select game y filtrar por Deporte, ademas de acomodar el codigo de modal de orlando

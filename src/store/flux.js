@@ -1,12 +1,16 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+
+      startDate : new Date(),
+      modal: false,
+
       userfile: {
           username:'',
           password:'',
           firstname:'',
           lastname:'',
-          email:'',
+          e_mail:'',
           gender:'',
 
           deporte: 'Fútbol y baloncesto',
@@ -27,7 +31,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               schedule: "8:30",
               address:"Recoleta, Dominicos",
               typeOfSoil:"Cesped sintetico",
-              typeOfSport:"Tennis"
+              typeOfSport:"Tennis",
+              description: "Bonita cancha espectacular para jugar al fútbol y al aire libre con una buena cancha cubierta de césped. Tiene el escenario perfecto para muchas personas."
           },
           {
               id: 1,
@@ -38,7 +43,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               schedule: "8:30 a 18:30",
               address:"Huechuraba, av.Recoleta",
               typeOfSoil:"Cesped sintetico",
-              typeOfSport:"Futbol"
+              typeOfSport:"Futbol",
+              description: ""
           },
           {
               id: 2,
@@ -49,10 +55,11 @@ const getState = ({ getStore, getActions, setStore }) => {
               schedule: "8:30 a 20:30",
               address:"Recoleta, Dominicos",
               typeOfSoil:"Cesped Humedo",
-              typeOfSport:"Futbol"
+              typeOfSport:"Futbol",
+              description: ""
           },
           {
-              id: 2,
+              id: 3,
               opsOfServicesSelected: ["Baño", "Cafeteria", "Quincho"],
               title:"Gimnasio U. Chile",
               price:"25.000",
@@ -60,7 +67,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               schedule: "8:30 a 18:30",
               address:"Maipu, Reyes Bravo",
               typeOfSoil:"Cesped Humedo",
-              typeOfSport:"Futbol, Basketball"
+              typeOfSport:"Futbol, Basketball",
+              description: ""
           },
       ],
 
@@ -72,10 +80,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         schedule: "",
         address:"",
         typeOfSoil:"",
-        typeOfSport:""
+        typeOfSport:"",
+        description: ""
       }
     },
     actions: {
+      toggleModal: () => {
+      const store = getStore();
+      let { modal } = store;
+      setStore({modal: !modal})
+      },
       saveNewUser: () => {
         const store = getStore();
         fetch("new_user", {
@@ -96,6 +110,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then(data => console.log(data))
           .catch(err => console.log(err));
       },
+
+
+
       handleChangeObject(e) {
         setStore({ [e.target.name]: e.target.value });
         e.preventDefault();
@@ -114,8 +131,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ sport_field_data });
         e.preventDefault();
       },
-
-
       handleSubmit(e){
         const store = getStore();
         e.preventDefault();
@@ -136,18 +151,17 @@ const getState = ({ getStore, getActions, setStore }) => {
             schedule: "",
             address:"",
             typeOfSoil:"",
-            typeOfSport:""
+            typeOfSport:"",
+            description: ""
           }
         });
       },
-
       editAdminCard(e,index){
         const store = getStore();
         let { admin_field_card } = store;
+        console.log(admin_field_card[index])
         setStore({sport_field_data: admin_field_card[index]})
         e.preventDefault();
-        console.log(admin_field_card[index])
-
        },
       deleteAdminCard(e,index){
        const store = getStore();
@@ -173,14 +187,24 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
         const {sport_field_data} = store;
         let {options} = e.target;
-        // let value = ""
+        let value = ""
         for (var i = 0; i < options.length; i++) {
           if (options[i].selected) {
             sport_field_data[e.target.name] = options[i].value ;
           }
         }
         setStore({sport_field_data});
-        }
+        },
+      handleChangeDate(e){
+      const store = getStore();
+      let {startDate} = store;
+      startDate = e
+      console.log(startDate)
+      setStore({ startDate })
+       },
+       handleReservation(e){
+
+       }
     }
   };
 };
