@@ -81,9 +81,7 @@ const FieldCardAdmin = (props) => {
               </div>
               <div className="modal-body">
                       <form
-                      className="Form-data"
-
-                      >
+                      className="Form-data">
                           <div className="form-row">
                               <div className="form-group col-md-6">
                                   <label htmlFor="fieldTitle">Nombre de Sitio/Cancha</label>

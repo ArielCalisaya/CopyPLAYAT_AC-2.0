@@ -19,7 +19,7 @@ class User extends React.Component {
     return(
         <Context.Consumer>
         {
-            ({store}) => {
+            ({store, actions}) => {
                 return(
                 <div className="container">
                   <div className="row user-container">
@@ -36,24 +36,191 @@ class User extends React.Component {
                             <h6>Subir Imagen</h6>
                           </label>
                           </div>
-                        <h3 id="title-user">John Doe</h3>
+                        <h3 id="title-user">{store.userfile.firstname} {store.userfile.lastname}</h3>
 
-                        <p className="deporte">Football and BasketBall</p>
+                        <p className="deporte">{store.userfile.deporte}</p>
 
-                        <p className="level-Player">Pro-Player</p>
+                        <p className="carrera">{store.userfile.carrera}</p>
 
-                        <p className="carrera">Pro Trainer Fitnes</p>
-
-                        <p className="phone-number">Phone: +56 9 123 456 78</p>
+                        <p className="phone-number">{store.userfile.phone_number}</p>
 
                         <div className="icons" style={iconsize}>
                           <a id="icon-contact" href={store.userfile.twitter}><i className="fab fa-twitter"></i></a>
                           <a id="icon-contact" href={store.userfile.instagram}><i className="fab fa-instagram"></i></a>
                           <a id="icon-contact" href={store.userfile.facebook}><i className="fab fa-facebook"></i></a>
                         </div>
-                        <p><a className="contact-btn" href="/user/edit">Editar</a></p>
+                        <button
+                        type="button"
+						className="btn btn-success"
+						data-toggle="modal"
+						data-target=".moda-editUser"
+						> Editar </button>
                       </div>
                     </div>
+
+
+
+
+
+                    <div className="modal bd-example-modal-xl moda-editUser"
+                    tabIndex="-1"
+                    role="dialog"
+                    aria-labelledby="myExtraLargeModalLabel"
+                    aria-hidden="true">
+                      <div className="modal-dialog modal-dialog-centered modal-xl">
+                        <div className="modal-content">
+                            <div className="modal-header" style={center}>
+                            <h1 className="tittle">Editar información</h1>
+                            </div>
+                          <div className="modal-body">
+
+                          <form
+                          className="Form-data">
+                              <div className="form-row">
+                                  <div className="form-group col-md-6">
+                                      <label htmlFor="fieldTitle">Nombres</label>
+                                      <input type="text"
+                                      className="form-control"
+                                      id="fieldTitle" placeholder="Nombre"
+                                      value={store.userfile.firstname}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="firstname"
+                                      />
+
+                                  </div>
+
+                                  <div className="form-group col-md-6">
+                                      <label htmlFor="schedule">Apellidos</label>
+                                      <input type="text"
+                                      className="form-control" id="schedule"
+                                      placeholder="Apellidos"
+                                      value={store.userfile.lastname}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="lastname"/>
+                                  </div>
+
+                                  <div className="form-group col-md-12">
+                                      <label htmlFor="uploadImg">Email</label>
+                                      <input
+                                      type="text"
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      value={store.userfile.e_mail}
+                                      className="form-control"
+                                      name="e_mail"
+                                      placeholder="&#128231; e-mail"
+                                      id="uploadImg"/>
+                                  </div>
+
+                                  <div className="form-group col-md-12">
+                                      <label htmlFor="gender">Genero</label><br/>
+                                      <input
+                                      className="form-group col-md-6"
+                                      type="radio"
+
+                                      name='gender'
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      id="Masculino"
+                                      value="Masculino"
+                                      /><label htmlFor="Masculino">Masculino</label>
+
+                                      <input
+                                      className="form-group col-md-6"
+                                      type="radio"
+
+                                      name='gender'
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      id="Femenino"
+                                      value="Femenino"
+
+                                      /><label htmlFor="Femenino">Femenino</label>
+                                  </div>
+
+                                  <div className="form-group col-md-6">
+                                      <label htmlFor="deporte">Deportes</label>
+                                      <input type="text"
+                                      className="form-control"
+                                      placeholder="Fútbol, Basketball ..."
+                                      value={store.userfile.deporte}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="deporte"/>
+                                  </div>
+
+                                  <div className="form-group col-md-6">
+                                      <label htmlFor="schedule">Profesión</label>
+                                      <input type="text"
+                                      className="form-control"
+                                      placeholder="Profesión"
+                                      value={store.userfile.carrera}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="carrera"/>
+                                  </div>
+
+                                  <div className="form-group col-md-12">
+                                      <label htmlFor="schedule">Telefono</label>
+                                      <input type="text"
+                                      className="form-control"
+                                      placeholder="+56 9 ..."
+                                      value={store.userfile.phone_number}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="phone_number"/>
+                                  </div>
+
+                                  <div className="form-group col-md-12">
+                                      <label htmlFor="schedule">Twitter</label>
+                                      <input type="text"
+                                      className="form-control"
+                                      placeholder="http://www.twitter.com/user..."
+                                      value={store.userfile.twitter}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="twitter"/>
+                                  </div>
+
+                                  <div className="form-group col-md-12">
+                                      <label htmlFor="schedule">Instagram</label>
+                                      <input type="text"
+                                      className="form-control"
+                                      placeholder= "http://www.instagram.com/user"
+                                      value={store.userfile.instagram}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="instagram"/>
+                                  </div>
+
+                                  <div className="form-group col-md-12">
+                                      <label htmlFor="schedule">Facebook</label>
+                                      <input type="text"
+                                      className="form-control"
+                                      placeholder="https://www.facebook.com/user"
+                                      value={store.userfile.facebook}
+                                      onChange={(e)=> actions.handleChange(e)}
+                                      name="facebook"/>
+                                  </div>
+
+                                  </div>
+                                  </form>
+
+                      <div className="button-add" style={centerPage}>
+                          <button type="submit"
+                          style={margin}
+                          className="btn btn-success"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                          onClick={(e)=> actions.handleSubmit(e)}
+
+                          >Guardar Cambios</button>
+                          <button type="button" style={margin} className="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">Cerrar</span>
+                          </button>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
 
                     <div className="col-md-9 "  >
                     <div className="card">
@@ -102,4 +269,18 @@ let userimg=
 let iconsize=
 {
   margin: '24px 0'
+}
+
+let centerPage =
+{
+	textAlign: 'center',
+	margin: '10px'
+}
+let margin=
+{
+	margin:"12px",
+}
+let center =
+{
+	margin: '0 auto',
 }

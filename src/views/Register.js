@@ -8,7 +8,8 @@ class Registro extends React.Component{
       <div className="container-register">
         <Context.Consumer>
           {
-            ({store,actions}) => {return(
+            ({store,actions}) => {
+                return(
         <form onSubmit={(e)=> actions.handleSubmit(e)} className="register-form">
           <h1 className="tittle">Sign Up</h1>
           <div className="input-container-register">
@@ -46,24 +47,7 @@ class Registro extends React.Component{
             )}}
           </Context.Consumer>
       </div>
-      //DEBUG: En google api button uncaught TypeError: Cannot read property 'style' of null
-      // item google sign in no usado
-      // msg: de consola html
-      // TERMINAR: Vista de imagen para Sabado
     )
   }
 }
 export default Registro;
-
-// actulizacion 27/09/2019 1:06: AGREGADO; funcion para almacenar datos en consola.
-
-
-// otra opcion para reemplazar imput tipo radio a un Select
-// <label>
-//   Sexo:
-//   <select name='gender' >
-//     <option value="Masculino">Masculino</option>
-//     <option value="Femenino">Femenino</option>
-//     <option value="Otro">Otro</option>
-//   </select>
-// </label>

@@ -4,7 +4,6 @@ import Registro from './views/Register';
 import SelectGame from './views/Select Game';
 import Home from './views/Home'
 import User from './views/User';
-import EditUser from './views/editUser';
 import Admin from './views/Admin';
 import FieldsView from "./views/Select Field";
 import GameReservation from "./views/GameReservation";
@@ -22,7 +21,6 @@ function Layout() {
                 <Route path="/register" component={Registro} />
                 <Route path="/selectGame" component={SelectGame} />
                 <Route exact path="/user" component={User}  />
-                <Route path="/user/edit" component={EditUser} />
                 <Route exact path="/admin" component={Admin}  />
                 <Route path="/fields" component={FieldsView}  />
                 <Route path="/reservation" component={GameReservation}  />
