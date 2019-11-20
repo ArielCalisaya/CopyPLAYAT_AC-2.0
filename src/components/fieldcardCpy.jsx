@@ -48,7 +48,7 @@ const FieldCard = (props) => {
 
 
 
-                <div key={props.id} className="modal bd-example-modal-xl modal-forAddFieldCard"
+                <div className="modal bd-example-modal-xl modal-forAddFieldCard"
                 tabIndex="-1"
                 role="dialog"
                 aria-labelledby="myExtraLargeModalLabel"
@@ -145,3 +145,67 @@ let imageResize=
 {
     width:"250px",
 }
+
+
+
+
+
+<Modal isOpen={store.modal} fade={false}>
+<ModalHeader toggle={(e) => actions.toggleModal(e)}>{props.title}</ModalHeader>
+    <ModalBody>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-12 text-center my-background">
+
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-md-12 text-center">
+                    <img src="./../img/image.jpg" className="img-fluid mx-auto d-block" alt="FieldImage" />
+                </div>
+            </div>
+            <div className="row pt-4">
+                <div className="col-lg-4 col-md-6 col-sm-12">
+                    <ul className="text-left list-unstyled">
+                        <li><i className="fas fa-users fa-2x p-3 col-6 pink"></i>{props.playersCapacity}</li>
+                        <li> <i className="fas fa-bath fa-2x p-3 col-6  pink"></i>Vestidores</li>
+                    </ul>
+                </div>
+                <div className="col-lg-4 col-md-6 col-sm-12">
+                    <ul className="text-left list-unstyled">
+                        <li><i className="fas fa-utensils fa-2x p-3 col-6 pink"></i>Casino</li>
+                        <li> <i className="fas fa-parking fa-2x p-3 col-6 pink"></i>Parking</li>
+                    </ul>
+                </div>
+                <div className="col-lg-4 col-md-6 col-sm-12">
+                    <ul className="text-left list-unstyled">
+                        <li><i className="fas fa-wifi fa-2x p-3 col-6 pink"></i>Wifi</li>
+                        <li><i className="fas fa-archive fa-2x p-3 col-6 pink"></i>Lockers</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="row pt-4">
+                <p>
+                    {props.description}
+                </p>
+            </div>
+            <div className="row pt-4">
+                <i className="far fa-calendar-alt" >
+                    <DatePicker
+                        selected={store.startDate}
+                        onChange={(e) => actions.handleChangeDate(e)}
+                        locale="pt-BR"
+                        showTimeSelect
+                        timeFormat="p"
+                        timeIntervals={60}
+                        dateFormat="Pp"
+                    />
+                </i>
+            </div>
+        </div>
+    </ModalBody>
+    <ModalFooter>
+        <button className="btn-register-card" onClick={(e) => actions.handleReservation(e)}>Reservar</button>
+        <button className="btn-register-card" onClick={(e) => actions.toggleModal(e)}>Cancelar</button>
+    </ModalFooter>
+</Modal>

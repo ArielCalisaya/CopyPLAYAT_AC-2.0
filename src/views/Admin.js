@@ -209,6 +209,22 @@ class Admin extends React.Component {
 													  <option value="Baseball">Baseball</option>
 												  </select>
 											  </div>
+											  <div className="form-group col-md-12"
+											  style={{textAlign: "center"}}>
+
+											  <textarea type="text"
+											  style={{
+												  width: "350px",
+												  height: "130px",
+											  }}
+											  id="inputAddress"
+											  placeholder="Descripción..."
+											  value={store.sport_field_data.description}
+											  onChange={(e)=> actions.handleChangeFieldData(e)}
+											  name="description"
+											  />
+											  </div>
+
 										  </div>
 							  </form>
 
@@ -247,6 +263,7 @@ class Admin extends React.Component {
 								price={item.price + " CLP"}
 								index={index}
 								key={index}
+								description={item.description}
 								/>
 								)}
 							)

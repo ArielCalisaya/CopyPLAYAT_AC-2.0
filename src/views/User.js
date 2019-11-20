@@ -1,6 +1,6 @@
 import React from 'react';
 import {Context} from '../store/appContext';
-
+import FieldCard from '../components/FieldCard';
 class User extends React.Component {
   constructor(){
     super();
@@ -55,10 +55,30 @@ class User extends React.Component {
                       </div>
                     </div>
 
-                    <div className="col-md-9 info-juegos"  >
+                    <div className="col-md-9 "  >
                     <div className="card">
+                    <h3>Lugares Visitados</h3>
                             <div className="profile-content">
-                          			  <h3>COMPONENT</h3>
+    						<div className="overflow" style={{height: "570px"}}>
+    						{store.admin_field_card.map((item,index) => {
+    							return(
+    								<FieldCard
+    								title={item.title}
+    								schedule={item.schedule}
+    								opsOfServicesSelected={item.opsOfServicesSelected}
+    								playersCapacity={item.playersCapacity + " Personas Max" }
+    								address= {item.address}
+    								typeOfSoil={item.typeOfSoil}
+    								typeOfSport={item.typeOfSport}
+    								price={item.price + " CLP"}
+    								index={index}
+                                    description={item.description}
+    								key={index}
+    								/>
+    								)}
+    							)
+    						}
+    						</div>
                             </div>
                             </div>
                 		</div>

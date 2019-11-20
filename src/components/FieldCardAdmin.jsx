@@ -190,8 +190,24 @@ const FieldCardAdmin = (props) => {
                                       <option value="Cesped sintetico">Tennis</option>
                                       <option value="Cesped natural">Basketball</option>
                                       <option value="Madera">Baseball</option>
-                                      <option value="Vinilo">Volleyball</option>
                                   </select>
+                              </div>
+
+                              <div className="form-group col-md-12">
+
+                              <textarea type="text"
+                              style={{
+                                  width: "350px",
+                                  height: "130px"
+                              }}
+                              id="inputAddress"
+                              placeholder="Descripción..."
+                              value={store.sport_field_data.description}
+                              onChange={(e)=> actions.handleChangeFieldData(e)}
+                              name="description"
+                              />
+
+
                               </div>
                           </div>
                           <div className="button-add" style={centerPage}>

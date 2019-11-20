@@ -32,7 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               address:"Recoleta, Dominicos",
               typeOfSoil:"Cesped sintetico",
               typeOfSport:"Tennis",
-              description: "Bonita cancha espectacular para jugar al fútbol y al aire libre con una buena cancha cubierta de césped. Tiene el escenario perfecto para muchas personas."
+              description: " Bonita cancha espectacular para jugar al fútbol y al aire libre con una buena cancha cubierta de césped. Tiene el escenario perfecto para muchas personas."
           },
           {
               id: 1,
@@ -187,7 +187,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
         const {sport_field_data} = store;
         let {options} = e.target;
-        let value = ""
         for (var i = 0; i < options.length; i++) {
           if (options[i].selected) {
             sport_field_data[e.target.name] = options[i].value ;
